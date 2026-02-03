@@ -5,6 +5,7 @@ pyserial
 pymap3d
 pymavlink
 toml
+scipy
 
 # Optional dependencies for specific adapters
 # paho-mqtt  # For MQTT input adapter (uncomment if needed)
