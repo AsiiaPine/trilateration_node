@@ -1,0 +1,68 @@
+# UWB Localization Configuration
+
+[localization]
+# Anchor positions: anchor_id -> [x, y, z] in meters
+anchor_positions = {1 = [0.0, 0.0, 0.0], 2 = [3.0, 0.0, 0.0], 3 = [0.0, 3.0, 0.0]}
+
+# Calibration type: "none", "linear", "quadratic", "cubic"
+calibration_type = "none"
+
+# Calibration parameters:
+# - linear: [k, b] for k*x + b
+# - quadratic: [a, b, c] for a*x^2 + b*x + c
+# - cubic: [a, b, c, d] for a*x^3 + b*x^2 + c*x + d
+calibration_params = [1.0, 0.0]
+
+# Z sign: 0 = auto, +1 = positive z, -1 = negative z
+z_sign = 0
+
+# Valid range limits (meters)
+min_range = 0.0
+max_range = 100.0
+
+[input]
+# Input adapter type: "serial", "mqtt", "udp", "file"
+type = "serial"
+
+# Serial input settings
+port = "/dev/ttyUSB0"
+baud = 460800
+timeout = 1.0
+
+# MQTT input settings (when type = "mqtt")
+# broker = "localhost"
+# port = 1883
+# topic = "uwb/distances"
+
+# UDP input settings (when type = "udp")
+# host = "0.0.0.0"
+# port = 5005
+
+# File input settings (when type = "file")
+# filepath = "distances.json"
+# poll_interval = 1.0
+
+[output]
+# Output adapter type: "console", "mavlink", "mavros", "udp", "file"
+# Can specify multiple comma-separated: "console,mavlink"
+type = "console"
+
+# Console output settings
+format = "human"  # "human" or "json"
+
+# MAVLink output settings (when type = "mavlink")
+# connection_string = "udp:127.0.0.1:14550"  # or "tcp:127.0.0.1:5760"
+# system_id = 1
+# component_id = 1
+
+# MAVROS output settings (when type = "mavros")
+# topic_prefix = "mavros"
+# frame_id = "map"
+
+# UDP output settings (when type = "udp")
+# host = "127.0.0.1"
+# port = 5006
+
+# File output settings (when type = "file")
+# filepath = "positions.jsonl"
+# mode = "a"  # "a" for append, "w" for write

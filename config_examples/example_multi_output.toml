@@ -1,0 +1,26 @@
+# Example configuration with multiple outputs (console + MAVLink + file)
+
+[localization]
+anchor_positions = {
+    1 = [0.0, 0.0, 0.0],
+    2 = [3.0, 0.0, 0.0],
+    3 = [0.0, 3.0, 0.0]
+}
+calibration_type = "linear"
+calibration_params = [1.0, 0.0]
+z_sign = 0
+min_range = 0.0
+max_range = 100.0
+
+[input]
+type = "serial"
+port = "/dev/ttyUSB0"
+baud = 460800
+
+[output]
+# Multiple outputs: console for debugging, MAVLink for flight controller, file for logging
+type = "console,mavlink,file"
+format = "human"  # For console output
+connection_string = "udp:127.0.0.1:14550"  # For MAVLink
+filepath = "positions.jsonl"  # For file output
+mode = "a"

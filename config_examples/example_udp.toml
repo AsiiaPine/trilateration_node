@@ -1,0 +1,23 @@
+# Example configuration for UDP input and output
+
+[localization]
+anchor_positions = {
+    1 = [0.0, 0.0, 0.0],
+    2 = [3.0, 0.0, 0.0],
+    3 = [0.0, 3.0, 0.0]
+}
+calibration_type = "none"
+calibration_params = [1.0, 0.0]
+z_sign = 0
+min_range = 0.0
+max_range = 100.0
+
+[input]
+type = "udp"
+host = "0.0.0.0"
+port = 5005
+
+[output]
+type = "udp"
+host = "127.0.0.1"
+port = 5006

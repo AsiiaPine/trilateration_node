@@ -1,0 +1,16 @@
+# Core dependencies
+Localization
+numpy
+pyserial
+pymap3d
+pymavlink
+toml
+
+# Optional dependencies for specific adapters
+# paho-mqtt  # For MQTT input adapter (uncomment if needed)
+# rclpy  # For MAVROS/ROS2 output adapter (install via ROS2)
+
+# Test dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
